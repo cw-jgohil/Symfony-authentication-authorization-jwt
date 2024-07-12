@@ -3,3 +3,19 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+# api_login_check:
+#     path: /api/login_check
+# login_check:
+#     path: /api/login_check
+#     controller: App\Controller\API\AuthController::refresh
+#     methods: [POST]
+
+# register:
+#     path: /api/register
+#     controller: App\Controller\API\AuthController::register
+#     methods: [POST]
+
+# refresh_token:
+#     path: /api/token/refresh
+#     controller: App\Controller\API\AuthController::refresh
+#     methods: [POST]

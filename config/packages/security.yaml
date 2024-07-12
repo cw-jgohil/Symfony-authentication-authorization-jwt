@@ -44,6 +44,9 @@ security:
             stateless: true
             provider: app_user_provider
             jwt: ~
+        refresh:
+            pattern:  ^/api/token/refresh
+            stateless: true
         # main:
         #     lazy: true
         #     provider: app_user_provider
@@ -78,6 +81,10 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
+        - { path: ^/api/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/api/token/refresh, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/api/admin, roles: ROLE_ADMIN }
+        - { path: ^/api/user, roles: ROLE_USER }
         # - { path: ^/api/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         # - { path: ^/api/admin, roles: ROLE_ADMIN }
         # - { path: ^/api/user, roles: ROLE_USER }
